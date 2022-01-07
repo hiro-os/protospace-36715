@@ -13,7 +13,7 @@
       <% @prototypes.each do |prototype| %>
         <div class="prototype__image">
           <%=link_to (image_tag prototype.image),prototype_path(prototype.id), method: :get%>
-         <%= prototype.catch_copy %><br><%= prototype.concept %><br><%= link_to "by #{prototype.user.name}", "#" %>
+         <%= prototype.title %><br><%= prototype.catch_copy %><br><%= link_to "by #{prototype.user.name}", "#" %>
         </div>
       <% end%>
     </div>
