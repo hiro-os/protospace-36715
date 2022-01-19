@@ -29,13 +29,7 @@
       </h2>
       <div class="user__card">
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <% @prototypes.each do |prototype| %>
-          <% if user_signed_in? && prototype.id == @user.id %>
-          <div class="prototype__image">
-            <p><%=link_to (image_tag prototype.image),prototype_path(prototype.id), method: :get %><br><%= prototype.catch_copy %><br><%= prototype.concept %><br><%=link_to "by #{@user.name}" %></p> 
-          </div>
-          <% end%>
-        <% end %>
+          <%= render partial: 'prototypes/prototype', collection: @prototypes %>
       </div>
     </div>
   </div>

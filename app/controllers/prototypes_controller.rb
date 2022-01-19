@@ -27,8 +27,8 @@ class PrototypesController < ApplicationController
   def destroy
     prototype = Prototype.find(params[:id])
     prototype.destroy
-    comment = Comment.find(params[:id])
-    comment.destroy
+    #comment = Comment.find(params[:id])
+    #comment.destroy
     redirect_to action: :index
   end
 
@@ -39,7 +39,7 @@ class PrototypesController < ApplicationController
   def update
     @prototype = Prototype.find(params[:id])
     if @prototype.update(prototype_params)
-      redirect_to action: :index
+      redirect_to action: :show
     else
       render :edit
     end
